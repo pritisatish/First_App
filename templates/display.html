@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Upload Image</title>
+ </head>
+ <body>
+
+   {% if msg %}
+   <h1>{{ msg }}</h1>
+   {% endif %}
+
+   <h1>Upload new File</h1>
+
+   <form method=post enctype=multipart/form-data>
+     <p><input type=file name=file>
+<!--         <input type=submit value=Upload>  </p>-->
+
+       <p><label for="Bank_List">Choose_a_Bank:</label>
+        <select name="Banks" id="Banks">
+        <option value="sample-chase">sample-chase</option>
+        <option value="Howard_Bank">Howard_Bank</option>
+
+        </select></p>
+
+<!--            <p> <label for="acct_Nbr">Acct_Nbr/Emp_Nbr</label>-->
+<!--            <input type="text" pattern="[a-zA-Z'_'s\]*" required name="acct_nbr" oninvalid="this.setCustomValidity('Enter Acct Nbr Here')"-->
+<!--                 oninput="this.setCustomValidity('')"> </p>-->
+       <br>
+            <input type="submit" value="Submit">
+   </form>
+   <h1>Result:</h1>
+   {% if img_src %}
+     <img src="{{ img_src }}">
+   {% endif %}
+
+   {% if extracted_text %}
+     <p><b>The parsed content from the above image is:</b></p>
+<!--     <p> the extracted text from the above image is :<b> {{ extracted_text }} </b></p>-->
+
+     <p> Account number verified with accuracy:<b> {{ extracted_text }} </b></p>
+     <p> Time Span:<b> {{ extracted_text1 }} </b></p>
+     <p> Ending Balance:<b> {{ extracted_text2 }} </b></p>
+   {% else %}
+     The parsed content will be displayed here
+   {% endif %}
+ </body>
+</html>
