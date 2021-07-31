@@ -1,1 +1,1 @@
-web : gunicorn app_mortapp1: app
+web : gunicorn app_mortapp1 : app
