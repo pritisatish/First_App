@@ -6,8 +6,8 @@ from werkzeug.datastructures import FileStorage
 # import our OCR function
 
 # define a folder to store and later serve the images
-#UPLOAD_FOLDER = '/static/uploads/'
-UPLOAD_FOLDER = r"E:\Preethi.Patil\image1\file_upload"
+UPLOAD_FOLDER = '/static/uploads/'
+#UPLOAD_FOLDER = r"E:\Preethi.Patil\image1\file_upload"
 
 # allow files of a specific type
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg'])
@@ -22,13 +22,12 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # route and function to handle the home page
-#@app.route('/')
+@app.route('/')
 def home():
     #return render_template('index.html')
     return '<h1>welcome,App</h1>'
 
-#@app.route('/upload', methods=['GET', 'POST'])
-@app.route('/')
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_page():
     if request.method == 'POST':
 
