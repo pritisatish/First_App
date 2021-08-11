@@ -27,7 +27,8 @@ def home():
     #return render_template('index.html')
     return '<h1>welcome,App</h1>'
 
-@app.route('/upload', methods=['GET', 'POST'])
+#@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/')
 def upload_page():
     if request.method == 'POST':
 
