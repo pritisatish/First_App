@@ -70,4 +70,4 @@ def upload_page():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    waitress.serve(app,port=port)
+    #waitress.serve(app,port=port)
