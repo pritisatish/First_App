@@ -1,2 +1,2 @@
-web: gunicorn app-mortapp1:app --log-file=- 
+web: gunicorn demo-app1:app --log-file=-
 
